@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Needs Attention for Jira — Bomray Lab</title>
+  <meta name="description" content="Documentation for Needs Attention for Jira by Bomray Lab.">
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="Bomray Lab logo">
+      <span>Bomray Lab</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="container app-hero">
+    <div class="app-hero-grid">
+      <div>
+        <span class="eyebrow">Jira Cloud App</span>
+        <h1>Needs Attention for Jira</h1>
+        <p>Review Jira projects, custom fields, filters, and dashboards that may require administrator attention. See clear evidence before deciding what to do.</p>
+        <div class="badge-row">
+          <span class="badge">Built with Atlassian Forge</span>
+          <span class="badge">No automatic cleanup</span>
+          <span class="badge">English & Korean</span>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="#getting-started">Get started</a>
+          <a class="button" href="/support.html">Contact support</a>
+        </div>
+      </div>
+      <img class="app-icon-large" src="/assets/logo.png" alt="Needs Attention for Jira icon">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container docs-layout">
+      <aside class="docs-nav" aria-label="Documentation navigation">
+        <strong>Documentation</strong>
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#getting-started">Getting started</a>
+        <a href="#workflow">Review workflow</a>
+        <a href="#history">Scan history</a>
+        <a href="#snooze">Snooze</a>
+        <a href="#security">Data & security</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <div>
+        <section class="docs-section" id="overview">
+          <h2>Overview</h2>
+          <p>Needs Attention for Jira gives Jira Cloud administrators a focused review workspace. It identifies configuration items that may need attention and explains why each item was flagged.</p>
+          <div class="note">The app does not automatically delete, archive, or modify Jira resources. Administrators remain in control of every decision.</div>
+        </section>
+
+        <section class="docs-section" id="features">
+          <h2>Features</h2>
+          <div class="feature-grid">
+            <div class="feature">
+              <strong>Overview dashboard</strong>
+              <p>See health score, priority breakdowns, and top review items.</p>
+            </div>
+            <div class="feature">
+              <strong>Project review</strong>
+              <p>Review stale, inactive, empty, or poorly owned projects.</p>
+            </div>
+            <div class="feature">
+              <strong>Custom field review</strong>
+              <p>Inspect usage, context, screens, and scope before making changes.</p>
+            </div>
+            <div class="feature">
+              <strong>Filter and dashboard review</strong>
+              <p>Find items that may no longer be useful, shared, favorited, or clearly owned.</p>
+            </div>
+            <div class="feature">
+              <strong>Scan history</strong>
+              <p>Track changes across saved scan snapshots.</p>
+            </div>
+            <div class="feature">
+              <strong>Snapshot comparison</strong>
+              <p>Identify new, resolved, changed, and unchanged items.</p>
+            </div>
+            <div class="feature">
+              <strong>Snooze workflow</strong>
+              <p>Temporarily hide an item for 30, 60, or 90 days.</p>
+            </div>
+            <div class="feature">
+              <strong>Configurable rules</strong>
+              <p>Adjust thresholds and preferences for your Jira environment.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="getting-started">
+          <h2>Getting started</h2>
+          <ol class="step-list">
+            <li>Install <strong>Needs Attention for Jira</strong> from the Atlassian Marketplace.</li>
+            <li>Open <strong>Apps &gt; Needs Attention</strong> in Jira.</li>
+            <li>From the <strong>Overview</strong> page, click <strong>Run Scan</strong> to analyze your Jira configuration.</li>
+            <li>Select a resource type such as <strong>Projects</strong>, <strong>Custom Fields</strong>, <strong>Filters</strong>, or <strong>Dashboards</strong>.</li>
+            <li>Review the evidence and details for each item before taking action.</li>
+          </ol>
+          <p class="note">The initial scan may take longer depending on the size of your Jira site.</p>
+        </section>
+
+        <section class="docs-section" id="workflow">
+          <h2>Review workflow</h2>
+          <h3>1. Start from Overview</h3>
+          <p>Overview summarizes Projects, Custom Fields, Filters, and Dashboards that need review.</p>
+          <h3>2. Open a review category</h3>
+          <p>Each category provides a prioritized list.</p>
+          <h3>3. Inspect evidence</h3>
+          <p>Evidence explains why the item was flagged. Details provide additional Jira context.</p>
+          <h3>4. Continue in Jira</h3>
+          <p>Use the action button to open the related Jira configuration page. The app does not make the change for you.</p>
+        </section>
+
+        <section class="docs-section" id="history">
+          <h2>Scan history</h2>
+          <p>Each manual scan creates a snapshot of the current review result.</p>
+          <ul>
+            <li><strong>New:</strong> newly detected</li>
+            <li><strong>Resolved:</strong> no longer detected</li>
+            <li><strong>Changed:</strong> evidence or priority changed</li>
+            <li><strong>Unchanged:</strong> remains the same</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="snooze">
+          <h2>Snooze</h2>
+          <p>Snooze temporarily removes an item from the active review list for 30, 60, or 90 days. Changes are reflected after the next scan.</p>
+        </section>
+
+        <section class="docs-section" id="security">
+          <h2>Data and security</h2>
+          <ul>
+            <li>Built on Atlassian Forge</li>
+            <li>No external Bomray Lab application server</li>
+            <li>No automatic deletion or configuration modification</li>
+            <li>History and preferences use Atlassian-hosted Forge storage</li>
+          </ul>
+          <p>Read the <a href="/privacy.html">Privacy Policy</a> for details.</p>
+        </section>
+
+        <section class="docs-section" id="faq">
+          <h2>FAQ</h2>
+          <h3>Does the app automatically delete or archive anything?</h3>
+          <p>No. It only identifies items for review and provides supporting evidence.</p>
+          <h3>When does Jira data get scanned?</h3>
+          <p>A fresh scan runs when an administrator selects <strong>Run Scan</strong>.</p>
+          <h3>Can I change the review criteria?</h3>
+          <p>Yes. Available thresholds and preferences can be managed from Settings.</p>
+          <h3>How do I get help?</h3>
+          <p>Visit <a href="/support.html">Support</a> or email <a href="mailto:bomray.lab@gmail.com">bomray.lab@gmail.com</a>.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Bomray Lab. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/apps.html">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
