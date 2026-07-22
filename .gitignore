@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# editor
+.vscode/
+.cursor/
+.claude/
+
+# JetBrains
+.idea/
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+
+# Python
+__pycache__/
