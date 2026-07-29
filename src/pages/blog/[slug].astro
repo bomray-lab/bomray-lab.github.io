@@ -1,0 +1,25 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { getPostSlug } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: getPostSlug(post) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const allPosts = await getCollection('blog');
+const relatedSlugs = post.data.related ?? [];
+const relatedPosts = relatedSlugs
+  .map((slug) => allPosts.find((entry) => getPostSlug(entry) === slug))
+  .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+---
+<BlogPostLayout post={post} relatedPosts={relatedPosts}>
+  <Content />
+</BlogPostLayout>
