@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import SiteLayout from './SiteLayout.astro';
+import {
+  getPostSlug,
+  postPath,
+  resolveOgImageUrl,
+  toAbsoluteUrl,
+} from '../lib/blog';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  relatedPosts?: CollectionEntry<'blog'>[];
+}
+
+const { post, relatedPosts = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, category, hero, keywords, seo } = post.data;
+
+const slug = getPostSlug(post);
+const pagePath = postPath(slug);
+const absoluteCanonical = toAbsoluteUrl(seo?.canonical ?? pagePath, Astro.site);
+const pageTitle = seo?.title ?? title;
+const pageDescription = seo?.description ?? description;
+const ogTitle = seo?.ogTitle ?? pageTitle;
+const ogDescription = seo?.ogDescription ?? pageDescription;
+const robots = seo?.robots ?? 'index, follow';
+const ogImage = await resolveOgImageUrl(seo?.ogImage ?? hero, Astro.site);
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: pageDescription,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  image: ogImage ? [ogImage] : undefined,
+  author: {
+    '@type': 'Organization',
+    name: 'Bomray Lab',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Bomray Lab',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': absoluteCanonical,
+  },
+};
+---
+<SiteLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={absoluteCanonical}
+  robots={robots}
+  ogType="article"
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  keywords={keywords}
+  jsonLd={jsonLd}
+>
+  <main class="container">
+    <article class="document blog-post">
+      <p class="meta">
+        <a href="/blog/">Resources</a> · {category} · {formattedDate}
+      </p>
+      <h1>{title}</h1>
+      {hero && (
+        <Image
+          class="blog-hero"
+          src={hero}
+          alt={title}
+          widths={[720, 1080]}
+          sizes="(max-width: 820px) 100vw, 760px"
+        />
+      )}
+      <div class="blog-content">
+        <slot />
+      </div>
+
+      {relatedPosts.length > 0 && (
+        <section class="related-articles" aria-labelledby="related-heading">
+          <h2 id="related-heading">Related Articles</h2>
+          <ul>
+            {relatedPosts.map((related) => (
+              <li>
+                <a href={postPath(getPostSlug(related))}>{related.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
+  </main>
+</SiteLayout>
