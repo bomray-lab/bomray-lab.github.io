@@ -413,20 +413,12 @@ A safe Jira cleanup process asks:
 
 Apply the checklist in small, evidence-based batches. Start with ownership and scope, trace dependencies, prefer reversible actions, and document every decision.
 
-Manual review works well for smaller Jira sites. As environments grow, collecting evidence across projects, fields, filters, and dashboards becomes more time-consuming. [Needs Attention for Jira](/apps/needs-attention-for-jira/) can help surface review candidates while leaving every decision to Jira administrators.
-
-## Related Articles
-
-- [How to Identify Unused Custom Fields in Jira](/resources/how-to-identify-unused-custom-fields-in-jira/)
-- [Jira Dashboard Ownership: What Admins Should Review](/resources/jira-dashboard-ownership/)
-- [How to Find Unused Filters in Jira](/resources/how-to-find-unused-filters-in-jira/)
-- [Needs Attention for Jira](/apps/needs-attention-for-jira/)
-- [Bomray Lab Support](/support/)
+Manual review works well for smaller Jira sites. As environments grow, collecting evidence across projects, fields, filters, and dashboards becomes more time-consuming. [Needs Attention for Jira](/apps/) can help surface review candidates while leaving every decision to Jira administrators.
 
 ## Official References
 
-- [Data limits and guardrails](https://support.atlassian.com/jira-cloud-administration/docs/data-limits-and-guardrails/)
-- [Configure field contexts](https://support.atlassian.com/jira-cloud-administration/docs/configure-field-contexts-in-your-site/)
-- [Optimize fields in your site](https://support.atlassian.com/jira-cloud-administration/docs/optimize-your-custom-fields/)
-- [Manage shared filters](https://support.atlassian.com/jira-cloud-administration/docs/manage-shared-filters/)
-- [Audit activities in Jira](https://support.atlassian.com/jira-cloud-administration/docs/audit-activities-in-jira-applications/)
+- <a href="https://support.atlassian.com/jira-cloud-administration/docs/data-limits-and-guardrails/" target="_blank" rel="noopener noreferrer">Data limits and guardrails</a>
+- <a href="https://support.atlassian.com/jira-cloud-administration/docs/configure-field-contexts-in-your-site/" target="_blank" rel="noopener noreferrer">Configure field contexts</a>
+- <a href="https://support.atlassian.com/jira-cloud-administration/docs/optimize-your-custom-fields/" target="_blank" rel="noopener noreferrer">Optimize fields in your site</a>
+- <a href="https://support.atlassian.com/jira-cloud-administration/docs/manage-shared-filters/" target="_blank" rel="noopener noreferrer">Manage shared filters</a>
+- <a href="https://support.atlassian.com/jira-cloud-administration/docs/audit-activities-in-jira-applications/" target="_blank" rel="noopener noreferrer">Audit activities in Jira</a>

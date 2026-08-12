@@ -18,7 +18,15 @@ import SiteLayout from '../layouts/SiteLayout.astro';
             <span class="badge">English & Korean</span>
           </div>
           <div class="actions">
-            <a class="button primary" href="#getting-started">Get started</a>
+            <a
+              class="button primary"
+              href="https://marketplace.atlassian.com/apps/3107345287/needs-attention-for-jira"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-ga-event="marketplace_cta_click"
+              data-ga-location="apps_hero"
+            >View on Marketplace</a>
+            <a class="button" href="#getting-started">Get started</a>
             <a class="button" href="/support/">Contact support</a>
           </div>
         </div>
@@ -88,7 +96,7 @@ import SiteLayout from '../layouts/SiteLayout.astro';
           <section class="docs-section" id="getting-started">
             <h2>Getting started</h2>
             <ol class="step-list">
-              <li>Install <strong>Needs Attention for Jira</strong> from the Atlassian Marketplace.</li>
+              <li>Install <strong>Needs Attention for Jira</strong> from the <a href="https://marketplace.atlassian.com/apps/3107345287/needs-attention-for-jira" target="_blank" rel="noopener noreferrer" data-ga-event="marketplace_cta_click" data-ga-location="apps_getting_started">Atlassian Marketplace</a>.</li>
               <li>Open <strong>Apps &gt; Needs Attention</strong> in Jira.</li>
               <li>From the <strong>Overview</strong> page, click <strong>Run Scan</strong> to analyze your Jira configuration.</li>
               <li>Select a resource type such as <strong>Projects</strong>, <strong>Custom Fields</strong>, <strong>Filters</strong>, or <strong>Dashboards</strong>.</li>

@@ -65,6 +65,19 @@ const canonicalUrl = canonical
     gtag('js', new Date());
 
     gtag('config', 'G-9YZPWYEBNV');
+
+    document.addEventListener('click', function (event) {
+      var target = event.target;
+      if (!(target instanceof Element)) return;
+      var link = target.closest('[data-ga-event]');
+      if (!link) return;
+
+      gtag('event', link.getAttribute('data-ga-event'), {
+        link_location: link.getAttribute('data-ga-location') || undefined,
+        link_url: link.href,
+        link_text: (link.textContent || '').trim(),
+      });
+    });
   </script>
 </head>
 <body>
