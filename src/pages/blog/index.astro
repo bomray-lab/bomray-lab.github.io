@@ -1,10 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { getCollection } from 'astro:content';
-import { getPostSlug, postPath } from '../../lib/blog';
+import { getPostSlug, getPublishedPosts, postPath } from '../../lib/blog';
 
-const posts = (await getCollection('blog'))
+const posts = (await getPublishedPosts())
   .filter((post) => post.data.lang === 'en')
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
@@ -30,8 +29,8 @@ const posts = (await getCollection('blog'))
                     class="post-hero"
                     src={post.data.hero}
                     alt=""
-                    widths={[480, 720]}
-                    sizes="(max-width: 820px) 100vw, 720px"
+                    widths={[420, 640]}
+                    sizes="(max-width: 480px) 100vw, 420px"
                   />
                 </a>
               )}
