@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://bomray-lab.github.io',
+  site: 'https://bomraylab.com',
   trailingSlash: 'always',
   integrations: [sitemap()],
 });
